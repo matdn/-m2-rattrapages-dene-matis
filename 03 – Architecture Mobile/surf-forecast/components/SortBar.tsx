@@ -6,13 +6,29 @@ import { mono } from '../app/theme/colors';
 export type SortMode = 'rating' | 'swell' | 'wind';
 
 
-export default function SortBar({ mode, onChange }: { mode: SortMode; onChange: (m: SortMode) => void; }) {
+export default function SortBar({
+    mode,
+    onChange,
+    showOnlyFav,
+    toggleOnlyFav,
+}: {
+    mode: SortMode;
+    onChange: (m: SortMode) => void;
+    showOnlyFav: boolean;
+    toggleOnlyFav: () => void;
+}) {
     return (
         <View style={styles.row}>
             <Pill label="Meilleure note" active={mode === 'rating'} onPress={() => onChange('rating')} />
             <Pill label="+ Houle" active={mode === 'swell'} onPress={() => onChange('swell')} />
             <Pill label="- Vent" active={mode === 'wind'} onPress={() => onChange('wind')} />
+            <Pill
+                label={showOnlyFav ? '★ Favoris uniquement' : '☆ Tous les spots'}
+                active={showOnlyFav}
+                onPress={toggleOnlyFav}
+            />
         </View>
+
     );
 }
 

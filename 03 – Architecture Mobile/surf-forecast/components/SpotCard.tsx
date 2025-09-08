@@ -25,13 +25,14 @@ export default function SpotCard({
                     <Text style={styles.spotRegion}>{region}</Text>
                 </View>
                 <Text style={styles.rating} accessibilityLabel={`Note ${best.rating} sur 5`}>{ratingDots(best.rating)}</Text>
+                <FavoriteButton id={id} />
             </View>
             <View style={styles.row}>
                 <Badge label={`${best.swellHeightM.toFixed(1)} m / ${best.periodS}s`} hint="Houle / Période" />
                 <Badge label={`${best.windKts} nds ${degToArrow(best.windDir)}`} hint="Vent" />
                 <Badge label={best.tide} hint="Marée" />
             </View>
-            <FavoriteButton id={id} />
+
             <Text style={styles.bestTime}>Meilleur créneau : {best.time}</Text>
         </View>
     );
