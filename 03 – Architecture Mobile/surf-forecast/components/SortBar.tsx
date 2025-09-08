@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Pressable, StyleSheet } from 'react-native';
-import { mono } from '../theme/colors';
+import { mono } from '../app/theme/colors';
 
 
 export type SortMode = 'rating' | 'swell' | 'wind';

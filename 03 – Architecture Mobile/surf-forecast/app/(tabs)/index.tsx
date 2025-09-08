@@ -1,8 +1,8 @@
 import React, { useMemo, useState, useCallback } from 'react';
 import { View, Text, FlatList, StyleSheet, Pressable, RefreshControl, SafeAreaView } from 'react-native';
-import { SPOTS, summarizeSpot } from '../constants/spots';
-import SortBar, { SortMode } from '../components/SortBar';
-import SpotCard from '../components/SpotCard';
+import { SPOTS, summarizeSpot } from '../../constants/spots';
+import SortBar, { SortMode } from '../../components/SortBar';
+import SpotCard from '../../components/SpotCard';
 import { mono } from '../theme/colors';
 
 
@@ -46,7 +46,7 @@ export default function HomeScreen() {
         ListHeaderComponent={<Header />}
         renderItem={({ item }) => (
           <Pressable onPress={() => console.log('Spot:', item.id)} accessibilityRole="button">
-            <SpotCard name={item.name} region={item.region} best={item.best} />
+            <SpotCard id={item.id} name={item.name} region={item.region} best={item.best} />
           </Pressable>
         )}
         refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}

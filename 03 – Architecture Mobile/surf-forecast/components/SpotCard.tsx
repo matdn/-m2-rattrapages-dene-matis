@@ -1,15 +1,18 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Badge from './ui/Badge';
-import { degToArrow, ratingDots } from '../lib/format';
-import { mono } from '../theme/colors';
+import { degToArrow, ratingDots } from '../app/lib/format';
+import { mono } from '../app/theme/colors';
+import FavoriteButton from './FavoriteButton';
 
 
 export default function SpotCard({
+    id,
     name,
     region,
     best,
 }: {
+    id: string;
     name: string;
     region: string;
     best: { swellHeightM: number; periodS: number; windKts: number; windDir: number; tide: string; rating: number; time: string; };
@@ -28,6 +31,7 @@ export default function SpotCard({
                 <Badge label={`${best.windKts} nds ${degToArrow(best.windDir)}`} hint="Vent" />
                 <Badge label={best.tide} hint="Marée" />
             </View>
+            <FavoriteButton id={id} />
             <Text style={styles.bestTime}>Meilleur créneau : {best.time}</Text>
         </View>
     );
