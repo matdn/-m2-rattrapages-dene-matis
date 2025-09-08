@@ -6,7 +6,6 @@ export function degToArrow(deg: number) {
 
 
 export function ratingDots(r: number) {
-    // Monochrome rating: ●○○○○ (1..5)
     const filled = '●'.repeat(r);
     const empty = '○'.repeat(5 - r);
     return filled + empty;
