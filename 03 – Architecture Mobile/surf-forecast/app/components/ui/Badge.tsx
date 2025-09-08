@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { mono } from '../theme/colors';
+import { mono } from '../../theme/colors';
 
 
 export default function Badge({ label, hint }: { label: string; hint?: string; }) {
