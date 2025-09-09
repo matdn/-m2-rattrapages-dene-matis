@@ -9,7 +9,7 @@ const fade = {
 
 export default function MaisonHero() {
   return (
-    <section className="relative max-w-[100dvw] min-h-screen w-full bg-white text-black">
+    <section className="bluryPanel relative max-w-[100dvw] min-h-screen w-full z-100 pointer-events-none text-black">
       <div className="pointer-events-none absolute left-0 right-0 top-6 z-20">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
           <motion.span
@@ -47,7 +47,7 @@ export default function MaisonHero() {
       <div className="mx-auto grid min-h-screen grid-cols-12 items-end justify-end gap-2 px-2">
         <div className="col-span-12 flex flex-col gap-6 md:col-span-7  absolute bottom-2 left-2">
           <div className="grid grid-cols-12 gap-2">
-             <motion.figure
+            <motion.figure
               variants={fade}
               initial="hidden"
               whileInView="show"
@@ -77,7 +77,7 @@ export default function MaisonHero() {
               <span className="pointer-events-none absolute -top-5 -left-1 -translate-x-1/2  -translate-y-1/2 select-none text-3xl">+</span>
             </motion.figure>
 
-           
+
           </div>
         </div>
 
