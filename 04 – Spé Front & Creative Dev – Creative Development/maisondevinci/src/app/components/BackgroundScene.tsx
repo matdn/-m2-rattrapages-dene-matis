@@ -10,7 +10,6 @@ const Model = () => {
   const video = document.createElement('video');
 
   useEffect(() => {
-    // Create the video element
     const video = document.createElement('video');
     video.src = './videoplayback.mp4';
     video.loop = true;
