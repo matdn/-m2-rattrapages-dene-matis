@@ -5,10 +5,12 @@ import SortBar, { SortMode } from '../../components/SortBar';
 import SpotCard from '../../components/SpotCard';
 import { mono } from '../theme/colors';
 import { useFavorites } from '../favorites/FavoritesContext';
+import { useRouter } from 'expo-router';
 
 
 
 export default function HomeScreen() {
+  const router = useRouter();
   const [refreshing, setRefreshing] = useState(false);
   const [sortMode, setSortMode] = useState<SortMode>('rating');
   const [showOnlyFav, setShowOnlyFav] = useState(false);
@@ -60,7 +62,7 @@ export default function HomeScreen() {
         keyExtractor={(item) => item.id}
         ListHeaderComponent={<Header />}
         renderItem={({ item }) => (
-          <Pressable onPress={() => console.log('Spot:', item.id)} accessibilityRole="button">
+          <Pressable onPress={() => router.push(`/spot/${item.id}`)} accessibilityRole="button">
             <SpotCard id={item.id} name={item.name} region={item.region} best={item.best} />
           </Pressable>
         )}
