@@ -40,7 +40,7 @@ const Model = () => {
         mesh.material = whiteMaterial;
 
         if (child.name === 'VideoPlane') {
-          camera.position.set(10, 1, 0);
+          camera.position.set(12, 1, 0);
           camera.lookAt(child.position);
           child.material = new MeshBasicMaterial({ color: 0x000000 });
         }
@@ -66,7 +66,7 @@ const BackgroundScene = () => {
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} color={"ffffff"} intensity={10} />
         <Model />
-        {/* <OrbitControls /> */}
+        <OrbitControls />
 
       </Canvas>
     </div>

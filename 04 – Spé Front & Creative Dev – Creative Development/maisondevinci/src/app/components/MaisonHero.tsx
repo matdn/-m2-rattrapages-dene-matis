@@ -9,7 +9,7 @@ const fade = {
 
 export default function MaisonHero() {
   return (
-    <section className="bluryPanel relative max-w-[100dvw] min-h-screen w-full z-100 pointer-events-none text-black">
+    <section className="bluryPanel relative max-w-[100dvw] min-h-screen w-full z-100 text-black">
       <div className="pointer-events-none absolute left-0 right-0 top-6 z-20">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6">
           <motion.span
@@ -58,7 +58,7 @@ export default function MaisonHero() {
               <img
                 src="./imageHero1.png"
                 alt="Black & white crowd"
-                className="h-[220px] w-full object-cover md:h-[280px]"
+                className="h-[220px] w-full object-cover md:h-[280px] opacity-50 hover:opacity-100 transition-opacity duration-500"
               />
             </motion.figure>
             <motion.figure
@@ -72,7 +72,7 @@ export default function MaisonHero() {
               <img
                 src="./imageHero2.png"
                 alt="Editorial nature cap"
-                className="h-[220px] w-full object-cover md:h-[280px]"
+                className="h-[220px] w-full object-cover md:h-[280px] opacity-50 hover:opacity-100 transition-opacity duration-500"
               />
               <span className="pointer-events-none absolute -top-5 -left-1 -translate-x-1/2  -translate-y-1/2 select-none text-3xl">+</span>
             </motion.figure>
